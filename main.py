@@ -45,6 +45,8 @@ def chat_with_naheed_ai(data: ChatInput):
         full_prompt = f"{NAHEED_KNOWLEDGE}\n\nUser Question: {data.message}\nNaheed AI Response:"
         response = client.models.generate_content(
             model="gemini-2.5-flash",
+            # main.py ke bilkul end mein ye ensure karein:
+app = app
             contents=full_prompt
         )
         return {"reply": response.text}
